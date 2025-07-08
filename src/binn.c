@@ -3164,11 +3164,11 @@ binn * APIENTRY binn_value(int type, void *pvalue, int size, binn_mem_free freef
           return NULL;
         }
         item->freefn = free_fn;
-        if (storage_type == BINN_STORAGE_STRING) size--;
       } else {
         item->ptr = pvalue;
         item->freefn = freefn;
       }
+      if (storage_type == BINN_STORAGE_STRING) size--;
       item->size = size;
       break;
     default:
